@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body>
+<div id="wrap" class="wrap home_wrap" style="height: auto !important; min-height: 0px !important;">
+  <div id="home_header" class="header notsize home_header">
+    <header>
+{#      <a class="search" href="javascript://" rel="call_panel" rev="panel_search">検索</a>#}
+      <div class="group toright">
+        <a id="header_user" class="icon login" href="passport/login.html"></a>
+      </div>
+    </header>
+  </div>
+
+  <h1 class="home_title">Arsgard Infomation</h1>
+
+
+  <nav class="home_box home_nav first">
+    <a class="job" href="job/index.html"><span>직업</span></a>
+    <a class="monster" href="monster/index.html"><span>몬스터</span></a>
+    <a class="extract" href="item/equipExtract.html"><span>호크마던전</span></a>
+    <a class="equip" href="item/equip.html"><span>장비</span></a>
+    <a class="food" href="item/food.html"><span>인챈트</span></a>
+    <a class="pet" href="pet/index.html"><span>수호동물</span></a>
+{#    <a class="card" href="item/card.html"><span>カード</span></a>#}
+{#    <a class="hat" href="item/hat.html"><span>頭飾</span></a>#}
+    <a class="artifact" href="item/personalArtifact.html"><span>古代の遺物</span></a>
+    <a class="storage" href="tool/storageTable.html"><span>手帳預ける</span></a>
+    <a class="world" href="map/index.html"><span>マップ</span></a>
+    <a class="furniture" href="item/furniture.html"><span>家具</span></a>
+    <a class="exchange" href="exchange/index.html"><span>取引所</span></a>
+    <a class="rune" href="job/rune.html"><span></span></a>
+    <a class="gem" href="job/gem.html"><span>ルーン</span></a>
+  </nav>
+    <div id="home_new" class="home_box home_new mt">
+    <dl>
+      <dt>News</dt>
+      <dd class="summary">(17 Jan) Romel Wiki App v1.5.15 released</dd>
+      <dd><a href="article/download-app2b7a.html?backurl=_back">(17 Jan) Romel Wiki App v1.5.15 released</a></dd>    </dl>
+  </div>
+
+{#  <div id="home_today" class="home_box home_activity home_today mt only_run">#}
+{#    <div class="hd">#}
+{#      <h2>掲示板              </h2>#}
+{#      <div class="acts">#}
+{#        <a id="today_edit" class="edit" href="javascript://" rel="todayedit" style="display:none;"></a>#}
+{#        <a id="today_mode" class="sw on" href="javascript://" rel="todaymode">進行中のみ表示</a>#}
+{#      </div>#}
+{#    </div>#}
+{#    <div class="bd">#}
+{#      <div class="group"><h3>水曜日</h3><dl class="row has_pic"><dt>カプラ防衛戦</dt><dd class="map">プロンテラ</dd><dd class="date">20:00 - 20:30</dd><dd class="face" style="background-image:url(https://rosc3.zhaiwuyu.com/item/item_51147.png"><a href="javascript://" rel="call_item" rev="51147"></a></dd></dl></div><div class="group end"><h3>木曜日</h3><dl class="row has_pic"><dt>GVG 攻城戦</dt><dd class="date">21:00 - 21:30</dd><dd class="face" style="background-image:url(https://rosc3.zhaiwuyu.com/item/item_156.png"><a href="javascript://" rel="call_item" rev="156"></a></dd></dl></div><div class="group end"><h3>金曜日</h3><dl class="row has_pic"><dt>MVP 争奪戦</dt><dd class="date">19:00 - 22:00</dd><dd class="face" style="background-image:url(https://rosc3.zhaiwuyu.com/face/Baphomet.png"></dd></dl></div><div class="group end"><h3>日曜日</h3><dl class="row has_pic"><dt>GVG 攻城戦決戦</dt><dd class="date">21:00 - 21:30</dd><dd class="face" style="background-image:url(https://rosc3.zhaiwuyu.com/item/item_45553.png"><a href="javascript://" rel="call_item" rev="45553"></a></dd></dl></div>    </div>#}
+{#  </div>#}
+{##}
+{#  <div class="zbox"><ins class="adsbygoogle" style="display: block; height: 100px;" data-ad-client="ca-pub-1050432828055112" data-ad-slot="4473922356" data-ad-format="horizontal" data-full-width-responsive="false" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 100px; width: 600px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_0" name="aswift_0" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:600px;height:100px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="600" height="100" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1050432828055112&amp;output=html&amp;h=100&amp;slotname=4473922356&amp;adk=3517091972&amp;adf=1334588671&amp;pi=t.ma~as.4473922356&amp;w=600&amp;fwrn=1&amp;fwrnh=100&amp;lmt=1706667890&amp;rafmt=2&amp;format=600x100&amp;url=file%3A%2F%2F%2FUsers%2Fjung%2Fworkspace%2Fromwiki%2Fromel.wiki%2Findex.html&amp;fwr=0&amp;fwrattr=false&amp;rpe=1&amp;resp_fmts=2&amp;wgl=1&amp;uach=WyJtYWNPUyIsIjEzLjUuMCIsIng4NiIsIiIsIjEyMC4wLjYwOTkuMjM0IixudWxsLDAsbnVsbCwiNjQiLFtbIk5vdF9BIEJyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxMjAuMC42MDk5LjIzNCJdLFsiR29vZ2xlIENocm9tZSIsIjEyMC4wLjYwOTkuMjM0Il1dLDBd&amp;dt=1706668150273&amp;bpp=4&amp;bdt=147&amp;idt=74&amp;shv=r20240124&amp;mjsv=m202401250101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;correlator=390021298327&amp;frm=20&amp;pv=2&amp;ga_vid=224572445.1706668150&amp;ga_sid=1706668150&amp;ga_hid=1448343200&amp;ga_fc=0&amp;u_tz=540&amp;u_his=7&amp;u_h=960&amp;u_w=1536&amp;u_ah=960&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=2&amp;dmc=8&amp;adx=180&amp;ady=826&amp;biw=960&amp;bih=804&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C31080619%2C95321958%2C21065724%2C31078663%2C31078665%2C31078668%2C31078670&amp;oid=2&amp;pvsid=1396481598999995&amp;tmod=958206053&amp;uas=0&amp;nvt=1&amp;fc=896&amp;brdim=-1253%2C69%2C-1253%2C69%2C1536%2C0%2C1226%2C891%2C975%2C804&amp;vis=1&amp;rsz=%7C%7CeoEbr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1.26&amp;td=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=1&amp;uci=a!1&amp;btvi=1&amp;fsb=1&amp;dtd=89" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>#}
+{#  <ul class="home_box home_article mt">#}
+{#        <li class="more">もっと<a href="articles/strategy.html"></a></li>#}
+{#  </ul>#}
+
+{##}
+{##}
+{#  <div class="home_box home_activity home_week_boss mt">#}
+{#    <div class="hd">#}
+{#      <h2>周目 BOSS</h2>#}
+{#      <div class="date">4日後に交換</div>#}
+{#    </div>#}
+{#    <div class="bd">#}
+{#      <div class="clearfix col_0">#}
+{#        <dl class="col is_mvp"><dt><div class="face" style="background-image:url(../rosc3.zhaiwuyu.com/face/Deviling.png)"><a href="javascript://" rel="call_monster" rev="30030"></a></div>ジャイアントデビルリング</dt><dd class="map">グラストヘイム本館</dd><dd class="item"><i style="background-image:url(../rosc3.zhaiwuyu.com/item/item_60009.png)"></i>悪魔の微笑み</dd></dl><dl class="col"><dt><div class="face" style="background-image:url(../rosc3.zhaiwuyu.com/face/TimeHolder.png)"></div>タイムホルダー・今日</dt><dd class="map">時計塔 2F</dd><dd class="item"><i style="background-image:url(../rosc3.zhaiwuyu.com/item/item_task_47.png)"></i>マライの針</dd></dl><dl class="col"><dt><div class="face" style="background-image:url(../rosc3.zhaiwuyu.com/face/Chepet.png)"></div>チェペット・ヴァイオレット</dt><dd class="map">おもちゃ工場 2F</dd><dd class="item"><i style="background-image:url(../rosc3.zhaiwuyu.com/item/item_47020.png)"></i>ヒツジの皮の矢筒</dd></dl><dl class="col"><dt><div class="face" style="background-image:url(../rosc3.zhaiwuyu.com/face/Archangeling.png)"></div>パワーリング</dt><dd class="map">アインブロックフィールド</dd><dd class="item"><i style="background-image:url(../rosc3.zhaiwuyu.com/item/item_40601.png)"></i>長老の杖</dd></dl><dl class="col"><dt><div class="face" style="background-image:url(../rosc3.zhaiwuyu.com/face/LordKaho.png)"></div>フレイムロード・スプレッド</dt><dd class="map">ノーグロード 2F</dd><dd class="item"><i style="background-image:url(../rosc3.zhaiwuyu.com/item/item_25300.png)"></i>壊れたカート</dd></dl><dl class="col"><dt><div class="face" style="background-image:url(../rosc3.zhaiwuyu.com/face/Wolf_Grandam.png)"></div>狡猾なウルフ</dt><dd class="map">霧の森</dd><dd class="item"><i style="background-image:url(../rosc3.zhaiwuyu.com/item/item_900018.png)"></i>グレッグマンの猟銃</dd></dl>      </div>#}
+{#    </div>#}
+{#    <div class="tips"></div>#}
+{#  </div>#}
+{##}
+{#  <div class="home_box home_activity home_star_monster mt">#}
+{#    <div class="hd">#}
+{#      <h2>★モンスター侵入</h2>#}
+{#      <div class="date">20:00 - 22:00</div>#}
+{#    </div>#}
+{#    <div class="bd">#}
+{#      <div class="clearfix col_3">#}
+{#        <dl class="col is_star"><dt><div class="face" style="background-image:url(../rosc3.zhaiwuyu.com/face/Baphomet_S.png)"><a href="javascript://" rel="call_monster" rev="120094"></a></div>バフォメットJr★</dt><dd>グラストヘイム本館</dd></dl><dl class="col is_star"><dt><div class="face" style="background-image:url(../rosc3.zhaiwuyu.com/face/Bathory.png)"><a href="javascript://" rel="call_monster" rev="120114"></a></div>バースリー★</dt><dd>時計塔 1F</dd></dl><dl class="col is_star"><dt><div class="face" style="background-image:url(../rosc3.zhaiwuyu.com/face/Teddy_Bear.png)"><a href="javascript://" rel="call_monster" rev="120122"></a></div>ベアドール★</dt><dd>おもちゃ工場 1-2F</dd></dl>      </div>#}
+{#    </div>#}
+{#  </div>#}
+
+
+
+  <nav class="home_box home_nav mt">
+    <a class="achievement" href="adventure/achievement.html"><span>実績</span></a>
+    <a class="attrpoint" href="tool/attrPoint.html"><span>ポイント</span></a>
+    <a class="copy" href="job/copySkill.html"><span>クローンスキル</span></a>
+    <a class="skill" href="tool/skill.html"><span>スキル</span></a>
+    <a class="skill4" href="tool/skill4.html"><span>4次 スキル</span></a>
+
+    <a class="being" href="being/index.html"><span>ホムンクルス</span></a>
+
+
+    <a class="map" href="tool/prtMaze.html"><span>迷宮の森</span></a>
+    <a class="answer" href="tool/xo.html"><span>クエスト問題</span></a>
+  </nav>
+
+  <div class="home_box home_links nav_link mt">
+    <div class="group"><a href="https://ragnarokm.gungho.jp/" target="_blank">ラグマス公式サイト</a><a href="http://ro.tnker.com/" target="_blank">仙境传说RO情報まとめサイト</a></div>    <div class="group">
+      <a href="article/about.html">Romel Wiki について</a>
+      <a href="article/contact.html">お問い合わせ &amp; 協力</a>
+      <a href="article/37.html">会員について</a>      <a href="feedback.html">提案とフィードバック</a>
+      <a href="welcome.html">Language</a>
+    </div>
+  </div>
+  <!-- 侧面板: 搜索 -->
+<div id="panel_search" class="panel_all_search to_guest panel_page onright halfblack out">
+  <a class="bgclose" href="javascript://" rel="call_panel" rev="panel_search"></a>
+  <div class="inwrap gray">
+    <div class="header">
+      <header>
+        <h1>検索</h1>
+        <div class="group toright">
+          <a class="icon close" href="javascript://" rel="call_panel" rev="panel_search"></a>
+        </div>
+      </header>
+    </div>
+    <div class="panel_body">
+      <div class="tipbox for_guest">
+        <div class="btns">
+          <a class="button blue radius" href="passport/login.html">ログインしてください</a>
+        </div>
+      </div>
+      <footer class="footer"></footer>
+    </div>
+  </div>
+</div>
+  <footer id="footer" class="footer">
+  <div class="mbox clearfix">
+    <div class="ft_copyright">
+      <div>© 2017 - 2024 romel.wiki</div>
+      <div class="icp"><a target="_blank" href="https://beian.miit.gov.cn/">桂ICP备09000369号-5</a></div>
+    </div>
+    <div class="ft_acts">
+      <a href="feedback.html">[フィードバック]</a>
+      <a href="article/app-download.html">[App]</a>
+    </div>
+  </div>
+</footer>
+</div>
+{% endblock %}
+{#<script src="https://romel.wiki/static/m/js/ready.js?version=20230113gkp1ja93s0"></script><div class="this_qrcode"><div title="file:///Users/jung/workspace/romwiki/romel.wiki/index.html" class="pic"><canvas width="100" height="100" style="display: none;"></canvas><img src="data:image/png;base64,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" style="display: block;"></div><div class="type"><a class="phone" title="手机网页版" href="file:///Users/jung/workspace/romwiki/romel.wiki/index.html"></a><a title="iOS 客户端" class="ios" href="https://itunes.apple.com/cn/app/id1434655006"></a><a class="android" title="Android 客户端" href="http://romel.wiki/article/app-download"></a><a title="微信公众号" class="wechat" href="http://weixin.qq.com/r/AkQPF7HE-_yArfV09xEQ"></a></div></div>#}
+{##}
+{#<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-159538951-1"></script>#}
+{#<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-159538951-1');</script>#}
+{#<script async="" src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>#}
+
+{#<script src="https://romel.wiki/static/m/js/controller/default/home.js?version=20230113gkp1ja93s0"></script>#}
+
+
+
+
+{#<div id="cxdialog" class="cxdialog"></div><div id="cxdialog_overlay" class="cxdialog_overlay"></div><div class="cxcalendar"><div class="cxcalendar_bd"></div></div><div class="cxcalendar_lock"></div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_1_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_1" name="aswift_1" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1050432828055112&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1706667890&amp;plat=1%3A16777224%2C2%3A16777224%2C3%3A65536%2C4%3A65536%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=file%3A%2F%2F%2FUsers%2Fjung%2Fworkspace%2Fromwiki%2Fromel.wiki%2Findex.html&amp;pra=7&amp;wgl=1&amp;easpi=0&amp;asro=0&amp;aslmt=0.4&amp;asamt=-1&amp;asedf=0&amp;asefa=1&amp;aseiel=1~2~4~6&amp;aslcwct=150&amp;asacwct=25&amp;uach=WyJtYWNPUyIsIjEzLjUuMCIsIng4NiIsIiIsIjEyMC4wLjYwOTkuMjM0IixudWxsLDAsbnVsbCwiNjQiLFtbIk5vdF9BIEJyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxMjAuMC42MDk5LjIzNCJdLFsiR29vZ2xlIENocm9tZSIsIjEyMC4wLjYwOTkuMjM0Il1dLDBd&amp;dt=1706668150280&amp;bpp=1&amp;bdt=155&amp;idt=89&amp;shv=r20240124&amp;mjsv=m202401250101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;prev_fmts=600x100&amp;nras=1&amp;correlator=390021298327&amp;frm=20&amp;pv=1&amp;ga_vid=224572445.1706668150&amp;ga_sid=1706668150&amp;ga_hid=1448343200&amp;ga_fc=0&amp;u_tz=540&amp;u_his=7&amp;u_h=960&amp;u_w=1536&amp;u_ah=960&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=2&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=960&amp;bih=804&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C31080619%2C95321958%2C21065724%2C31078663%2C31078665%2C31078668%2C31078670&amp;oid=2&amp;pvsid=1396481598999995&amp;tmod=958206053&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=896&amp;brdim=-1253%2C69%2C-1253%2C69%2C1536%2C0%2C1226%2C891%2C975%2C804&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1.26&amp;td=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;dtd=95" data-google-container-id="a!2" data-load-complete="true"></iframe></div></ins><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><!-- Mirrored from romel.wiki/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jan 2024 02:24:53 GMT --><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20240124/r20190131/zrt_lookup.html" style="display: none;"></iframe></html>#}

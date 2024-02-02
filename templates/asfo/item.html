@@ -1,0 +1,435 @@
+{% extends 'base.html' %}
+{% load static %}
+{#<head>#}
+{#<meta charset="utf-8">#}
+{#<title>장비 - 수호백과 - 라그나로크M Wiki</title>#}
+{#<meta name="keywords" content="Ragnarok,Ragnarok Wiki,Ragnarok M Wiki">#}
+{#<meta name="description" content="Provides mobile game Ragnarok: Eternal Love monsters, cards, headgear equipment, pets, food production and other data inquiries; weekly climb tower line, Guild replica map line; quickly find greedy store location; to assist players Better experience gaming entertainment.">#}
+{#<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">#}
+{#<!-- <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, user-scalable=no" media="(device-height:568px)"> -->#}
+{#<meta name="apple-mobile-web-app-capable" content="yes">#}
+{#<meta name="apple-mobile-web-app-status-bar-style" content="black">#}
+{#<meta name="apple-touch-fullscreen" content="yes">#}
+{#<meta name="format-detection" content="telephone=no">#}
+{#<meta name="theme-color" content="#4a89dc">#}
+{#<meta name="renderer" content="webkit">#}
+{#<link rel="shortcut icon" href="/static/icon/favicon-64x64.ico">#}
+{#<link rel="apple-touch-icon" sizes="57x57" href="/static/icon/touch-icon-57x57.png">#}
+{#<link rel="apple-touch-icon" sizes="72x72" href="/static/icon/touch-icon-72x72.png">#}
+{#<link rel="apple-touch-icon" sizes="114x114" href="/static/icon/touch-icon-114x114.png">#}
+{#<link rel="apple-touch-icon" sizes="144x144" href="/static/icon/touch-icon-144x144.png">#}
+{#<link rel="stylesheet" href="{% static 'css/mobile.css' %}">#}
+{#<link rel="stylesheet" href="{% static 'css/layout.css' %}">#}
+{#<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>#}
+{#<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-HHH9YRMERH&amp;l=dataLayer&amp;cx=c"></script>#}
+{#<script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202401310101/show_ads_impl_fy2021.js?bust=31080837"></script>#}
+{#<script src="/static/js/zepto.min.js"></script>#}
+{#<script src="/static/m/js/plugins.js?version=20230113gkp1ja93s0"></script>#}
+{#<script src="/static/m/js/init.js?version=20230113gkp1ja93s0"></script>#}
+{#<link rel="stylesheet" href="/static/m/css/language/ko.css?version=20230113gkp1ja93s0">#}
+{#<script src="/static/m/js/language/ko.js?version=20230113gkp1ja93s0"></script>#}
+{% block content %}
+        <style>
+        .col {
+            cursor: pointer; /* 클릭 가능한 요소로 설정 */
+        }
+
+        .col.hover {
+            /* hover 상태의 스타일을 여기에 추가하세요 */
+            background-color: lightgray;
+        }
+    </style>
+<div id="wrap" class="wrap">
+  <!-- Header File Start -->
+  <div id="header" class="header">
+    <header>
+      <h1 id="header_title">장비</h1>
+      <div class="group toleft">
+        <a id="header_back" class="icon back" href="/"></a>
+      </div>
+      <div class="group toright">
+        <a id="header_reset" class="icon reset" href="javascript://" rel="reset_filter" style="display:none;"></a>
+        <a class="icon search" href="javascript://" rel="call_panel" rev="panel_search"></a>
+      </div>
+    </header>
+  </div>
+  <!-- Header File End -->
+
+  <!-- 筛选工具 -->
+  <div id="filter_tool" class="filter_tool fixed col_5" data-form="filter_form">
+<a class="bgclose" href="javascript://" rel="close"></a>
+<div class="main">
+<dl class="col" id="toggleDL">
+    <dt id="filter_title_position" data-title="부위">부위</dt>
+    <dd class="col_a col_a_2">
+        <a href="javascript://" rel="filter_position" rev="" data-title="전부">전부</a>
+
+        <a href="javascript://" rel="filter_position" rev="1" data-title="무기">무기</a>
+
+        <a href="javascript://" rel="filter_position" rev="2" data-title="보조">방</a>
+
+        <a href="javascript://" rel="filter_position" rev="3" data-title="갑옷">갑옷</a>
+
+        <a href="javascript://" rel="filter_position" rev="4" data-title="걸칠것">걸칠것</a>
+
+        <a href="javascript://" rel="filter_position" rev="5" data-title="신발">신발</a>
+
+        <a href="javascript://" rel="filter_position" rev="6" data-title="액세서리">액세서리</a>
+
+        <a href="javascript://" rel="filter_position" rev="14" data-title="신기">신기</a>
+
+    </dd>
+  </dl>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleDL = document.getElementById('toggleDL');
+
+    // dl을 클릭했을 때 col 클래스 토글
+    toggleDL.addEventListener('click', function() {
+        toggleDL.classList.toggle('hover');
+    });
+});
+</script>
+{#<select name="language" onchange="handleOnChange(this)">#}
+{#  <option value="korean">전체</option>#}
+{#  <option value="english">무기</option>#}
+{#  <option value="chinese">갑옷</option>#}
+{#  <option value="spanish">투구</option>#}
+{#    <option value="spanish">반지</option>#}
+{#    <option value="spanish">방패</option>#}
+{#    <option value="spanish">각반</option>#}
+{#    <option value="spanish">장갑</option>#}
+{#    <option value="spanish">신발</option>#}
+{#    <option value="spanish">보조무기</option>#}
+{#</select>#}
+{#<div id='result'></div>#}
+
+  <dl class="col">
+    <dt id="filter_title_arms" data-title="유형">유형</dt>
+    <dd class="col_a col_a_3">
+        <a href="javascript://" rel="filter_arms" rev="" data-title="전부">전부</a>
+
+        <a href="javascript://" rel="filter_arms" rev="1" data-title="스피어">스피어</a>
+
+        <a href="javascript://" rel="filter_arms" rev="2" data-title="장검">장검</a>
+
+        <a href="javascript://" rel="filter_arms" rev="3" data-title="스태프">스태프</a>
+
+        <a href="javascript://" rel="filter_arms" rev="4" data-title="쥬르">쥬르</a>
+
+        <a href="javascript://" rel="filter_arms" rev="5" data-title="보우">보우</a>
+
+        <a href="javascript://" rel="filter_arms" rev="6" data-title="둔기">둔기</a>
+
+        <a href="javascript://" rel="filter_arms" rev="7" data-title="도끼">도끼</a>
+
+        <a href="javascript://" rel="filter_arms" rev="8" data-title="책">책</a>
+
+        <a href="javascript://" rel="filter_arms" rev="9" data-title="단검">단검</a>
+
+        <a href="javascript://" rel="filter_arms" rev="10" data-title="악기">악기</a>
+
+        <a href="javascript://" rel="filter_arms" rev="11" data-title="채찍">채찍</a>
+
+        <a href="javascript://" rel="filter_arms" rev="13" data-title="너클">너클</a>
+
+        <a href="javascript://" rel="filter_arms" rev="14" data-title="윈드">윈드</a>
+
+        <a href="javascript://" rel="filter_arms" rev="15" data-title="권총">권총</a>
+
+        <a href="javascript://" rel="filter_arms" rev="16" data-title="라이플">라이플</a>
+    </dd>
+  </dl>
+
+
+  <dl class="col">
+    <dt id="filter_title_job" data-title="직업">직업</dt>
+    <dd class="col_a col_a_3">
+
+        <a href="javascript://" rel="filter_job" rev="" data-title="전부">전부</a>
+
+        <a href="javascript://" rel="filter_job" rev="14" data-title="룬나이트">룬나이트</a>
+
+        <a href="javascript://" rel="filter_job" rev="74" data-title="로얄가드">로얄가드</a>
+
+        <a href="javascript://" rel="filter_job" rev="24" data-title="워록">워록</a>
+
+        <a href="javascript://" rel="filter_job" rev="84" data-title="소서러">소서러</a>
+
+        <a href="javascript://" rel="filter_job" rev="34" data-title="길로틴크로스">길로틴크로스</a>
+
+        <a href="javascript://" rel="filter_job" rev="94" data-title="쉐도우체이서">쉐도우체이서</a>
+
+        <a href="javascript://" rel="filter_job" rev="44" data-title="레인져">레인져</a>
+
+        <a href="javascript://" rel="filter_job" rev="104" data-title="민스트럴">민스트럴</a>
+
+        <a href="javascript://" rel="filter_job" rev="114" data-title="원더러">원더러</a>
+
+        <a href="javascript://" rel="filter_job" rev="54" data-title="아크 비숍">아크 비숍</a>
+
+        <a href="javascript://" rel="filter_job" rev="124" data-title="수라">수라</a>
+
+        <a href="javascript://" rel="filter_job" rev="64" data-title="미케닉">미케닉</a>
+
+        <a href="javascript://" rel="filter_job" rev="134" data-title="제네릭">제네릭</a>
+
+        <a href="javascript://" rel="filter_job" rev="144" data-title="울티마노비스">울티마노비스</a>
+
+        <a href="javascript://" rel="filter_job" rev="154" data-title="영혼 소환사">영혼 소환사</a>
+
+        <a href="javascript://" rel="filter_job" rev="164" data-title="카게로우">카게로우</a>
+
+        <a href="javascript://" rel="filter_job" rev="174" data-title="리벨리온">리벨리온</a>
+
+        <a href="javascript://" rel="filter_job" rev="184" data-title="소울리퍼">소울리퍼</a>
+
+        <a href="javascript://" rel="filter_job" rev="194" data-title="성제">성제</a>
+
+        <a href="javascript://" rel="filter_job" rev="204" data-title="화염신">화염신</a>
+
+        <a href="javascript://" rel="filter_job" rev="214" data-title="류진마루">류진마루</a>
+
+        <a href="javascript://" rel="filter_job" rev="224" data-title="혼돈 마도사">혼돈 마도사</a>
+
+    </dd>
+  </dl>
+
+</div>
+</div>
+
+<ul id="equip_list" class="item_list ajax_list ready" data-empty-tip="자료 없음" data-end-tip="더 이상 내용이 없습니다">
+    <li id="item_41611">
+      <div class="inbox clearfix">
+        <div class="side">
+          <div class="pic" style="background-image:url({% static 'images/category/item/weapon/earth_dragon_sword.png' %});"></div>
+              <div class="pic" style="background-image:url({% static 'images/category/item/weapon/lightning_dragon_sword.png' %});"></div>
+          <div class="position r_4">무기</div>
+        </div>
+        <div class="info">
+          <h3>뇌/토룡의해방된 검</h3>
+          <ul class="attr">
+                <li>다이</li>
+                <li>대미지 증가 : 17%</li>
+                <li>적중률 : 19%</li>
+                <li>HP: 570 | MP: 520 | SP: 820</li>
+                <li>힘(STR): 12 | 체질(CON): 10 | 민첩(DEX): 10</li>
+              <li>크리티컬: 6</li>
+              <li>공격속도: 8</li>
+          </ul>
+          <dl class="attr tag">
+            <dt>직업</dt>
+            <dd>
+                <em>전사</em>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    {#  <div class="acts">#}
+    {#      <a class="getupgrade" href="javascript://" rel="upgrade" rev="41611">티어 상승</a>#}
+    {#      <a class="getcost" href="javascript://" rel="cost" rev="41611">제작재료</a>#}
+    {#  </div>#}
+    </li>
+</ul>
+<ul id="equip_list" class="item_list ajax_list ready" data-empty-tip="자료 없음" data-end-tip="더 이상 내용이 없습니다">
+    <li id="item_41611">
+      <div class="inbox clearfix">
+        <div class="side">
+          <div class="pic" style="background-image:url({% static 'images/category/item/weapon/earth_dragon_sword.png' %});"></div>
+              <div class="pic" style="background-image:url({% static 'images/category/item/weapon/lightning_dragon_sword.png' %});"></div>
+          <div class="position r_4">무기</div>
+        </div>
+        <div class="info">
+          <h3>뇌/토룡의해방된 검</h3>
+          <ul class="attr">
+                <li>트라이</li>
+                <li>대미지 증가 : 17%</li>
+                <li>적중률 : 19%</li>
+                <li>HP: 570 | MP: 520 | SP: 820</li>
+                <li>힘(STR): 12 | 체질(CON): 10 | 민첩(DEX): 10</li>
+              <li>크리티컬: 6</li>
+              <li>공격속도: 8</li>
+          </ul>
+          <dl class="attr tag">
+            <dt>직업</dt>
+            <dd>
+                <em>전사</em>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    {#  <div class="acts">#}
+    {#      <a class="getupgrade" href="javascript://" rel="upgrade" rev="41611">티어 상승</a>#}
+    {#      <a class="getcost" href="javascript://" rel="cost" rev="41611">제작재료</a>#}
+    {#  </div>#}
+    </li>
+</ul>
+<ul id="equip_list" class="item_list ajax_list ready" data-empty-tip="자료 없음" data-end-tip="더 이상 내용이 없습니다">
+    <li id="item_41611">
+      <div class="inbox clearfix">
+        <div class="side">
+          <div class="pic" style="background-image:url({% static 'images/category/item/weapon/earth_dragon_sword.png' %});"></div>
+              <div class="pic" style="background-image:url({% static 'images/category/item/weapon/lightning_dragon_sword.png' %});"></div>
+          <div class="position r_4">무기</div>
+        </div>
+        <div class="info">
+          <h3>뇌/토룡의해방된 검</h3>
+          <ul class="attr">
+                <li>테트라</li>
+                <li>대미지 증가 : 17%</li>
+                <li>적중률 : 19%</li>
+                <li>HP: 570 | MP: 520 | SP: 820</li>
+                <li>힘(STR): 12 | 체질(CON): 10 | 민첩(DEX): 10</li>
+              <li>크리티컬: 6</li>
+              <li>공격속도: 8</li>
+          </ul>
+          <dl class="attr tag">
+            <dt>직업</dt>
+            <dd>
+                <em>전사</em>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    {#  <div class="acts">#}
+    {#      <a class="getupgrade" href="javascript://" rel="upgrade" rev="41611">티어 상승</a>#}
+    {#      <a class="getcost" href="javascript://" rel="cost" rev="41611">제작재료</a>#}
+    {#  </div>#}
+    </li>
+</ul>
+<ul id="equip_list" class="item_list ajax_list ready" data-empty-tip="자료 없음" data-end-tip="더 이상 내용이 없습니다">
+    <li id="item_41611">
+      <div class="inbox clearfix">
+        <div class="side">
+          <div class="pic" style="background-image:url({% static 'images/category/item/weapon/earth_dragon_sword.png' %});"></div>
+              <div class="pic" style="background-image:url({% static 'images/category/item/weapon/lightning_dragon_sword.png' %});"></div>
+          <div class="position r_4">무기</div>
+        </div>
+        <div class="info">
+          <h3>뇌/토룡의해방된 검</h3>
+          <ul class="attr">
+                <li>펜타</li>
+                <li>대미지 증가 : 17%</li>
+                <li>적중률 : 19%</li>
+                <li>HP: 570 | MP: 520 | SP: 820</li>
+                <li>힘(STR): 12 | 체질(CON): 10 | 민첩(DEX): 10</li>
+              <li>크리티컬: 6</li>
+              <li>공격속도: 8</li>
+          </ul>
+          <dl class="attr tag">
+            <dt>직업</dt>
+            <dd>
+                <em>전사</em>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    {#  <div class="acts">#}
+    {#      <a class="getupgrade" href="javascript://" rel="upgrade" rev="41611">티어 상승</a>#}
+    {#      <a class="getcost" href="javascript://" rel="cost" rev="41611">제작재료</a>#}
+    {#  </div>#}
+    </li>
+</ul>
+<ul id="equip_list" class="item_list ajax_list ready" data-empty-tip="자료 없음" data-end-tip="더 이상 내용이 없습니다">
+    <li id="item_41611">
+      <div class="inbox clearfix">
+        <div class="side">
+          <div class="pic" style="background-image:url({% static 'images/category/item/weapon/earth_dragon_sword.png' %});"></div>
+              <div class="pic" style="background-image:url({% static 'images/category/item/weapon/lightning_dragon_sword.png' %});"></div>
+          <div class="position r_4">무기</div>
+        </div>
+        <div class="info">
+          <h3>뇌/토룡의해방된 검</h3>
+          <ul class="attr">
+                <li>헥사</li>
+                <li>대미지 증가 : 17%</li>
+                <li>적중률 : 19%</li>
+                <li>HP: 570 | MP: 520 | SP: 820</li>
+                <li>힘(STR): 12 | 체질(CON): 10 | 민첩(DEX): 10</li>
+              <li>크리티컬: 6</li>
+              <li>공격속도: 8</li>
+          </ul>
+          <dl class="attr tag">
+            <dt>직업</dt>
+            <dd>
+                <em>전사</em>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    {#  <div class="acts">#}
+    {#      <a class="getupgrade" href="javascript://" rel="upgrade" rev="41611">티어 상승</a>#}
+    {#      <a class="getcost" href="javascript://" rel="cost" rev="41611">제작재료</a>#}
+    {#  </div>#}
+    </li>
+</ul>
+<ul id="equip_list" class="item_list ajax_list ready" data-empty-tip="자료 없음" data-end-tip="더 이상 내용이 없습니다">
+    <li id="item_41611">
+      <div class="inbox clearfix">
+        <div class="side">
+          <div class="pic" style="background-image:url({% static 'images/category/item/weapon/earth_dragon_sword.png' %});"></div>
+              <div class="pic" style="background-image:url({% static 'images/category/item/weapon/lightning_dragon_sword.png' %});"></div>
+          <div class="position r_4">무기</div>
+        </div>
+        <div class="info">
+          <h3>뇌/토룡의해방된 검</h3>
+          <ul class="attr">
+                <li>헵타</li>
+                <li>대미지 증가 : 17%</li>
+                <li>적중률 : 19%</li>
+                <li>HP: 570 | MP: 520 | SP: 820</li>
+                <li>힘(STR): 12 | 체질(CON): 10 | 민첩(DEX): 10</li>
+              <li>크리티컬: 6</li>
+              <li>공격속도: 8</li>
+          </ul>
+          <dl class="attr tag">
+            <dt>직업</dt>
+            <dd>
+                <em>전사</em>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    {#  <div class="acts">#}
+    {#      <a class="getupgrade" href="javascript://" rel="upgrade" rev="41611">티어 상승</a>#}
+    {#      <a class="getcost" href="javascript://" rel="cost" rev="41611">제작재료</a>#}
+    {#  </div>#}
+    </li>
+</ul>
+  <footer id="footer" class="footer">
+  <div class="mbox clearfix">
+    <div class="ft_copyright">© 2017 - 2024 romel.wiki</div>
+    <div class="ft_acts">
+      <a href="/feedback">[건의]</a>
+      <a href="/article/app-download">[App]</a>
+    </div>
+  </div>
+</footer>
+  <!-- Footer File Start -->
+<div id="footer_nav" class="footer_nav">
+  <nav>
+    <a class="col home" href="/">홈</a>
+    <a class="col monster" href="/monster/">몬스터</a>
+    <a class="col card" href="/item/card">카드</a>
+    <a class="col hat" href="/item/hat">의상</a>
+    <dl class="col more">
+      <dt>
+        <a href="javascript://" rel="sub">더 보기</a>
+      </dt>
+      <dd>
+        <a class="equip" href="/item/equip">장비</a>
+                <a class="pet" href="/pet/">펫</a>
+        <a class="food" href="/item/food">요리</a>
+        <a class="storage" href="/tool/storageTable">모험수첩 보관</a>
+                <a class="member" href="/account/">회원</a>
+      </dd>
+    </dl>
+  </nav>
+</div>
+{% endblock %}
+<!-- Footer File End --></div>
+<script>
+
+
+</script>
