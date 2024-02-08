@@ -13,8 +13,8 @@ urlpatterns = [
     path('main',
          base_views.main, name='main'),
 
-    path('item',
-         category_views.item, name='item'),
+    path('item_list',
+         category_views.item_list, name='item_list'),
 
     # question_views.py
     path('question/create/',

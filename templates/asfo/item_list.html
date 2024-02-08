@@ -335,6 +335,41 @@
             </li>
         </ul>
     </div>
+    {% if weapon_list %}
+    {% for weapon in weapon_list %}
+    <div class="test_list">
+        <ul id="" class="item_list ajax_list ready" data-empty-tip="자료 없음" data-end-tip="더 이상 내용이 없습니다">
+            <li id="item_41611">
+              <div class="inbox clearfix">
+                <div class="side">
+                  <div class="pic" style="background-image:url({% static 'images/category/item/weapon/earth_dragon_ax.png' %});"></div>
+        {#              <div class="pic" style="background-image:url({% static 'images/category/item/weapon/lightning_dragon_sword.png' %});"></div>#}
+                  <div class="position r_4">무기</div>
+                </div>
+                <div class="info">
+                  <h3>뇌/토룡의해방된 도끼 {{ weapon.tier }}</h3>
+                  <ul class="attr">
+                        <li>데미지 {{ weapon.min_dam }} ~ {{ weapon.max_dam }} </li>
+                        <li>대미지 증가 : {{ weapon.dam_increase }}</li>
+                        <li>적중률 : {{ weapon.hit }}</li>
+                        <li>HP: {{ weapon.hp }} | MP: {{ weapon.mp }} | SP: {{ weapon.sp }}</li>
+                        <li>힘(STR): {{ weapon.str }} | 체질(CON): {{ weapon.con }} | 민첩(DEX): {{ weapon.dex }}</li>
+                      <li>크리티컬: {{ weapon.critical }}</li>
+                      <li>공격속도: {{ weapon.att_speed }}</li>
+                  </ul>
+                  <dl class="attr tag">
+                    <dt>직업</dt>
+                    <dd>
+                        <em>{{ weapon.job }}</em>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </li>
+        </ul>
+    </div>
+    {% endfor %}
+    {% endif %}
 </div>
   <footer id="footer" class="footer">
   <div class="mbox clearfix">
